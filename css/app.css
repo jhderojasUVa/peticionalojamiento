@@ -1,0 +1,253 @@
+/* Import */
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans');
+
+/* Header video */
+header {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url('URL A LA IMAGEN PARA MOVILES Y DEMAS') black no-repeat center center scroll;
+  }
+  header video {
+    display: none;
+  }
+}
+
+/* Txt hero */
+header h1, header h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Bnts hero */
+.hero {
+  background: none;
+  border: 1px solid white;
+  text-transform: uppercase;
+  border-radius: 0px;
+  color: white;
+  margin: 1.5em;
+  padding: 1em 2em;
+}
+
+.hero:hover {
+  border: 1px solid white;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Nav */
+nav {
+  border: 1px solid #ddd;
+}
+
+/* Content */
+.margin-top-1 {
+  margin-top: 1em;
+}
+
+.margin-top-05 {
+  margin-top: 0.5em;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 1em;
+}
+
+.margin-bottom-05 {
+  margin-bottom: 0.5em;
+}
+
+.margin-left-1 {
+  margin-left: 1em;
+}
+
+.margin-left-05 {
+  margin-left: 0.5em;
+}
+
+.margin-right-1 {
+  margin-right: 1em;
+}
+
+.margin-right-05 {
+  margin-right: 0.5em;
+}
+
+/* Elements login */
+.semaforo_ {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: brown;
+}
+
+.semaforo_verde {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.semaforo_amarillo {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: yellow;
+}
+
+.semaforo_rojo {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+a.acciones_disabled {
+  display: block;
+  cursor: auto;
+  padding: 0.3em 0.8em;
+  text-align: center;
+  border: 1px solid white;
+  color: #a9a9a9 !important;
+}
+
+a.acciones {
+  display: block;
+  cursor: pointer;
+  padding: 0.3em 0.8em;
+  text-align: center;
+  border: 1px solid white;
+  color: black;
+}
+
+a.acciones:hover {
+  background-color: #e2e2e2;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+}
+
+a.acciones.peligro {
+  background-color: red;
+  color: white;
+}
+
+a.acciones.peligro:hover {
+  background: repeating-linear-gradient(
+    45deg,
+    red,
+    red 10px,
+    yellow 10px,
+    yellow 20px
+  );
+  background-size: 150% 150%;
+	-webkit-animation: Gradient 2s infinite;
+	-moz-animation: Gradient 2s infinite;
+	animation: Gradient 2s infinite;
+  color: black;
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+small.definicion {
+  position: relative;
+  bottom: 5px;
+}
+
+/* Ver alojamiento */
+hr.separadorBd {
+  margin: 2em 0;
+  border-color: black;
+  border-style: dotted;
+}
+
+/* Forms */
+input, label {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-light:hover {
+  border: 1px solid black;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0.2em;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+footer ul {
+  margin: 0.5em;
+}
+
+footer ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+footer ul li a {
+  font-size: 1.2em;
+  color: #121212;
+  padding: 0.2em 0.4em;
+  border: 1px solid white;
+}
+
+footer ul li a:hover {
+  border: 1px solid #121212;
+  color: #121212;
+}

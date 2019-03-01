@@ -60,8 +60,8 @@ class VerAlojamiento extends React.Component {
 
       })
       .catch((error) => {
-        alert('Ha habido un error!. Error PPx01');
-        throw 'Ha habido un error al pedir el password: '+ error;
+        alert('Ha habido un error!. Error PBDx01');
+        throw 'Ha habido un error al pedir una base de datos: '+ error;
       });
     } else {
       // Va a ser que se ha dado cuenta que no

@@ -80,7 +80,6 @@ class VerAlojamiento extends React.Component {
         this.setState({
           alojamiento: respuestajson.alojamiento
         });
-        console.log(this.state.alojamiento);
       })
       .catch((error) => {
         alert('Ha habido un error.\r\n¿Esta usted logeado en la plataforma?\r\n¿Es este alojamiento de su propiedad?\r\n\r\nPruebe a recargar la pagina. Error v01x01');
@@ -183,7 +182,7 @@ class VerAlojamiento extends React.Component {
     } else {
       returnBd =
         <Fragment>
-          &nbsp;<button onClick={this.handlePedirBd} className="btn btn-light"><i class="fas fa-database margin-right-05"></i>Pedir una Base de Datos</button>
+          &nbsp;<button onClick={this.handlePedirBd} className="btn btn-light"><i className="fas fa-database margin-right-05"></i>Pedir una Base de Datos</button>
         </Fragment>
     }
 

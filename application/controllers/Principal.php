@@ -80,4 +80,17 @@ class Principal extends CI_Controller {
 		$this -> load -> view('footer');
 	}
 
+	public function otras($idalojamiento) {
+		// Llama a la funcion que muestra
+
+		// Primero el SSO, always! Al menos que hasta el WS le mande al guano
+		$datos['usuario'] = $this -> ssouva -> login();
+
+		$datos['idalojamiento'] = $idalojamiento;
+
+		$this -> load -> view('cabecera');
+		$this -> load -> view('otras', $datos);
+		$this -> load -> view('footer');
+	}
+
 }

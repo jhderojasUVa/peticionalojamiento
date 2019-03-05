@@ -7,10 +7,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="<?=base_url()?>index.php/principal/login" role="link">Resumen</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="<?=base_url()?>index.php/principal/new" role="link">Nueva</a>
         </li>
         <li class="nav-item">

@@ -12,6 +12,7 @@ class VerAlojamiento extends React.Component {
 
     this.handlePedirPassword = this.handlePedirPassword.bind(this);
     this.handlePedirBd = this.handlePedirBd.bind(this);
+    this.handlePedirOtras = this.handlePedirOtras.bind(this);
   }
 
   handlePedirPassword() {
@@ -68,6 +69,14 @@ class VerAlojamiento extends React.Component {
     }
   }
 
+  handlePedirOtras() {
+    // Pide otras cosas
+    // Llamamos al controlador que llama a la vista que llama a...
+    let idAlojamiento = SacaID(window.location.pathname);
+    let hostLocation = window.location.hostname;
+    window.location = 'http://'+ hostLocation +'/index.php/principal/otras/'+ idAlojamiento;
+  }
+
   componentWillMount() {
     // Sacamos el ID de la URL
     let idAlojamiento = SacaID(window.location.pathname);
@@ -83,7 +92,7 @@ class VerAlojamiento extends React.Component {
       })
       .catch((error) => {
         alert('Ha habido un error.\r\n¿Esta usted logeado en la plataforma?\r\n¿Es este alojamiento de su propiedad?\r\n\r\nPruebe a recargar la pagina. Error v01x01');
-        throw 'Error en el fetch. Error: '+error;
+        throw 'Error en el fetch. Error: '+ error;
       });
 
     // Los datos de la bd
@@ -238,7 +247,7 @@ class VerAlojamiento extends React.Component {
         &nbsp;
         <button onClick={this.handlePedirPassword} className="btn btn-light">Pedir aumento de espacio en disco</button>
         &nbsp;
-        <button onClick={this.handlePedirPassword} className="btn btn-light">Otras peticiones</button>
+        <button onClick={this.handlePedirOtras} className="btn btn-light">Otras peticiones</button>
         {returnBd}
       </Fragment>
     );

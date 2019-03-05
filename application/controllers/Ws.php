@@ -189,6 +189,26 @@ class Ws extends CI_Controller {
     echo json_encode($datos);
 	}
 
+	public function enviaMail($idAlojamiento) {
+		// Funcion publica que envia un correo con las cosas que el pollo quiere
+		// Primero el SSO, always!
+		$datos['usuario'] = $this -> ssouva -> login();
+
+		// Sacamos los datos
+		$datosPost = json_decode(file_get_contents('php://input'), true);
+
+		// Enviamos al responsable el email
+		$emailContacto = $this -> alojamientos_model -> devuelveEmailContacto($datosPost['id']);
+
+		// Enviamos el correo
+		$datos['resultado'] = $this -> email_UVa -> envia_mail_a_soporte($emailContacto, $datosPost['asunto'], $datosPost['texto']);
+
+		// Devolver el JSON
+		header('Content-Type: application/json');
+		// Escupimos la respuesta
+    echo json_encode($datos);
+	}
+
 	private function generarPassword() {
 		// Funcion PRIVADA que genera un password de 16 caracteres
 		$letrasPermitidasPassword = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';

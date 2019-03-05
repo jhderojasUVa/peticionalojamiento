@@ -17,10 +17,21 @@ class ConsultaGente extends React.Component {
     let idAlojamiento = SacaID(window.location.pathname);
     let hostLocation = window.location.hostname;
 
-    fetch('http://'+ hostLocation +'/index.php/ws/enviamail/'+ idAlojamiento)
+    fetch('http://'+ hostLocation +'/index.php/ws/enviamail/'+ idAlojamiento, {
+      method: 'POST',
+      header: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: idAlojamiento ,
+        asunto: this.state.asunto,
+        texto: this.state.texto
+      })
+    })
       .then((respuesta) => respuesta.json())
       .then((respuestajson) => {
-        if (respuestajson.respuesta == true) {
+        if (respuestajson.resultado == true) {
           this.setState({ enviado: true });
         }
       })
